@@ -1,0 +1,66 @@
+<!-- hmac-sha256 library -->
+<script src="https://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha256.js"></script>
+<script
+  src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+  async defer
+></script>
+
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<!-- <header class="intro-header" style="background-image: url('https://www.marktai.com/img/lock-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Meta Tic Tac Toe</h1>
+                    <hr class="small">
+                    <span class="subheading">こんにちは</span>
+                    <p class="post-meta"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
+
+<!-- Post Content -->
+<article>
+    <div class="container-fluid">
+                
+        
+
+    <div ng-bind="error"> </div>
+    </div> 
+    <div class="container"
+        style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; min-width:362px;" 
+        unselectable="on"
+        onselectstart="return false;" 
+        onmousedown="return false;"
+        ng-hide = "userid == -1"
+        resize
+    >
+        <br>
+        <h1>Game</h1>
+        <div class = "row">
+            <div class = "col-md-6 col-lg-4">
+                <p ng-show = "whoseTurn" style = "white-space:pre-wrap; word-wrap: break-word" ng-bind='whoseTurn'></p>     
+                <button ng-click="refresh()" class="btn btn-default">Refresh</button>
+            </div>
+            <div class = "col-md-12 col-lg-8">
+                <div align= "center">
+                    <div ng-repeat = "i in [0,1,2]">
+                        <div ng-repeat = "j in [0,1,2]"> 
+                            <span ng-repeat = "k in [0,1,2]">
+                                <span ng-repeat = "m in [0,1,2]">
+                                    <canvas id = "box{{3*i + k}}-{{3*j + m}}"  width="{{boxSize}}" height="{{boxSize}}" style="border:1px solid {{( (3*i + k) % 2) ? 'blue' : 'red'}}" ng-click="canvasClicked({{3*i + k}}, {{3*j + m}})"></canvas>
+                                </span>
+                                <span ng-bind="$last ? '' : '&nbsp;'.repeat(spaces)"></span>
+                            </span>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
